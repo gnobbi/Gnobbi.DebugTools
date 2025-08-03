@@ -4,13 +4,24 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>Gnobbi.DebugTools.Decorator</AssemblyName>
+    <AssemblyName>Gnobbi.DebugTools.Decorator.Abstractions</AssemblyName>
     <RootNamespace>Gnobbi.DebugTools.Decorator</RootNamespace>
+	<PackageId>Gnobbi.DebugTools.Decorator.Abstractions</PackageId>
+	<Version>0.0.3</Version>
+	<Authors>Daniel Nicklaus</Authors>
+	<RepositoryUrl>https://github.com/gnobbi/Gnobbi.DebugTools</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	  <IsPackable>true</IsPackable>
+	  <IncludeBuildOutput>false</IncludeBuildOutput>
+	<Description>Base Types for Gnobbi.DebugTools.Decorator.SourceCodeGenerator. SourceCodeGenerator that automatically generates diagnostic decorators for interfaces using Roslyn source generators. Captures method execution details such as process/thread IDs, method/class names, start/finish times, elapsed milliseconds and in/out parameters of the method.</Description>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
+	  <None Include="..\README.md" Pack="true" PackagePath="\"/>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
-    <PackageReference Include="MongoDB.Driver" Version="3.4.2" />
   </ItemGroup>
 
 </Project>

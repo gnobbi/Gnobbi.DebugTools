@@ -2,17 +2,38 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<OutputItemType>Analyzer</OutputItemType>
-		<Pack>true</Pack>
-		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
-		<AssemblyName>Gnobbi.DebugTools.$(MSBuildProjectName)</AssemblyName>
-		<RootNamespace>Gnobbi.DebugTools.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-	</PropertyGroup>
+		<LangVersion>latest</LangVersion>
 
+		<IsRoslynAnalyzer>true</IsRoslynAnalyzer>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+
+		<AssemblyName>Gnobbi.DebugTools.Decorator.SourceCodeGenerator</AssemblyName>
+		<RootNamespace>Gnobbi.DebugTools.Decorator.SourceCodeGenerator</RootNamespace>
+		<PackageId>Gnobbi.DebugTools.Decorator.SourceCodeGenerator</PackageId>
+		<OutputItemType>Analyzer</OutputItemType>
+		<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		<NoWarn>NU5128</NoWarn>
+		<Version>0.0.3</Version>
+		<Authors>Daniel Nicklaus</Authors>
+		<RepositoryUrl>https://github.com/gnobbi/Gnobbi.DebugTools</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<Description>Source generator that automatically generates diagnostic decorators for interfaces.</Description>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+	
+	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
-		<PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+		<None Include="..\README.md" Pack="true" PackagePath="\"/>
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" PrivateAssets="all" >
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" PrivateAssets="all" />
+		<PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" PrivateAssets="all" />
 	</ItemGroup>
 
 </Project>
