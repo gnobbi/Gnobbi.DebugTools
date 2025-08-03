@@ -12,10 +12,6 @@
 	  </PropertyGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="Gnobbi.DebugTools.Decorator.Config.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.7" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
@@ -29,6 +25,9 @@
     <ProjectReference Include="..\Gnobbi.DebugTools.Decorator.Abstractions\Decorator.Abstractions.csproj" />
     <ProjectReference Include="..\Gnobbi.DebugTools.Decorator.SourceCodeGenerator\Decorator.SourceCodeGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="Gnobbi.DebugTools.Decorator.Config.json" />
+	</ItemGroup>
 
   <ItemGroup>
 	  <Using Include="NUnit.Framework" />

@@ -11,13 +11,13 @@ namespace Gnobbi.DebugTools.Decorator.Decorator.Test
         [SetUp]
         public void Setup()
         {
-            var serivceCollection = new ServiceCollection();
-            serivceCollection.AddSingleton<IUserRepository, UserRepository>();
-            serivceCollection.AddSingleton<IProjectRepository, ProjectRepository>();
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddSingleton<IUserRepository, UserRepository>();
+            serviceCollection.AddSingleton<IProjectRepository, ProjectRepository>();
 
-            serivceCollection.AddSingleton<IDiagnosticEntryHandler, FakeDiagnosticEntryHandler>();
-            ServiceDecoratorRegistration.RegisterDecorators(serivceCollection);
-            _serviceProvider = serivceCollection.BuildServiceProvider();
+            serviceCollection.AddSingleton<IDiagnosticEntryHandler, FakeDiagnosticEntryHandler>();
+            ServiceDecoratorRegistration.RegisterDecorators(serviceCollection);
+            _serviceProvider = serviceCollection.BuildServiceProvider();
         }
 
         [TearDown]
